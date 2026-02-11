@@ -4,14 +4,13 @@ class Bootstrap{
     private $action;
     private $request;
 
+    //constructor
     public function __construct($request){
+        //getting array due to rules in .htaccess
         $this->request = $request;
-        
-        if($this->request['controller'] == "")$this->controller = 'home';
-        else $this->controller = $this->request['controller'];
-        
-        if($this->request['action'] == '')$this->action = 'index';
-        else $this->action = $this->request['action']; 
+        //setting variable
+        $this->controller = $this->request['controller'] == "" ?'home' : $this->request['controller'];
+        $this->action = $this->request['action'] == '' ? 'index' : $this->request['action']; 
     }
 
     public function createController(){
