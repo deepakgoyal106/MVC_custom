@@ -2,7 +2,4 @@
 
 class Users extends Controller{
 
-    protected function Index(){
-        echo 'u';
-    }
 }
