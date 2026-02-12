@@ -1,4 +1,6 @@
 <?php
+//session start
+session_start();
 //include config
 require('config.php');
 require('classes/Bootstrap.php');

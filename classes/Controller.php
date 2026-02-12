@@ -13,10 +13,9 @@ abstract class Controller{
         return $this->{$this->action}();
     }
 
-    protected function returnView($viewMmodel, $fullView){
-        $view = 'views/'.get_class($this). '/' . $this->action. '.php';
+    protected function returnView($viewModel, $fullView){
+        $view = 'views/'.strtolower(get_class($this)). '/' . $this->action. '.php';
         if($fullView)require('views/main.php');
         else require($view);
-        
     }
 }

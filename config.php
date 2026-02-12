@@ -8,4 +8,4 @@ define("DB_NAME", "shareboard");
 
 // Define URL
 define("ROOT_PATH", "/");
-define("ROOT_URL", "http://localhost:8080/php_practice/phpPractice/mvc");
+define("ROOT_URL", "http://localhost:8080/php_practice/phpPractice/mvc/");
