@@ -25,10 +25,24 @@
 
 //what is promise
 
-let myPromise = new Promise((resolve, reject) => {
- 
-    resolve("Task completed");
- 
-})
-.then(res => console.log(res))
-.catch(err=>console.log(err));
+fetch("https://fakestoreapi.com/products")
+  .then(response => response.json())
+  .then(products => {
+    const container = document.getElementById("product");
+
+    products.forEach(product => {
+      const div = document.createElement("div");
+      div.className = "product-card";
+
+      div.innerHTML = `
+        <img src="${product.image}" alt="${product.title}">
+        <h4>${product.title}</h4>
+        <p>Price: $${product.price}</p>
+      `;
+
+      container.appendChild(div);
+    });
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
